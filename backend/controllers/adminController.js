@@ -104,10 +104,26 @@ const updateAdmin = async (req, res) => {
   res.status(200).json(data);
 };
 
+//  /login admin
+const loginAdmin = async (req, res) => {
+  const { un, pass } = req.body;
+  const { data, error } = await supabase
+    .from("adminMaster")
+    .select("id , adminEmail, adminPassword, adminFN")
+    .match({ adminEmail: un, adminPassword: pass });
+
+  if (error) {
+    res.status(400).json({ error: error });
+  }
+
+  res.status(200).json(data);
+};
+
 module.exports = {
   addAdmin,
   fetchAdmin,
   deleteAdmin,
   fetchOneAdmin,
   updateAdmin,
+  loginAdmin
 };

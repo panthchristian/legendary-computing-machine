@@ -1,20 +1,29 @@
 const express = require("express");
 
-const {addAdmin, fetchAdmin, deleteAdmin, fetchOneAdmin, updateAdmin} = require("../controllers/adminController")
+const {
+  addAdmin,
+  fetchAdmin,
+  deleteAdmin,
+  fetchOneAdmin,
+  updateAdmin,
+  loginAdmin,
+} = require("../controllers/adminController");
 
 const router = express.Router();
 
-router.get('/',(req,res)=>{
-    res.json("Route Admin");
-})
+router.get("/", (req, res) => {
+  res.json("Route Admin");
+});
 
-router.post('/addAdmin', addAdmin);
+router.post("/addAdmin", addAdmin);
 
-router.get('/fetchAdmin', fetchAdmin);
+router.get("/fetchAdmin", fetchAdmin);
 
-router.delete('/deleteAdmin', deleteAdmin);
+router.delete("/deleteAdmin", deleteAdmin);
 
-router.post('/fetchOneAdmin', fetchOneAdmin);
+router.post("/fetchOneAdmin", fetchOneAdmin);
 
-router.patch('/updateAdmin', updateAdmin);
+router.patch("/updateAdmin", updateAdmin);
+
+router.post("/login", loginAdmin);
 module.exports = router;
