@@ -1,50 +1,3 @@
-// // import React from 'react'
-
-// import { Fragment, useState } from "react";
-// import { Dialog, Transition } from "@headlessui/react";
-// import {
-//   Bars3Icon,
-//   CalendarIcon,
-//   ChartPieIcon,
-//   DocumentDuplicateIcon,
-//   FolderIcon,
-//   HomeIcon,
-//   UsersIcon,
-//   XMarkIcon,
-// } from "@heroicons/react/24/outline";
-
-// import { useNavigate } from "react-router-dom";
-// import { useAuth } from "../../authContext/adminAuth";
-
-// function Dashboard() {
-//   const data = useAuth();
-//   console.log(data.user);
-//   const dt = data.user[0];
-//   console.log(dt);
-//   const navigate = useNavigate();
-
-//   const handleLogout = () => {
-//     data.logout();
-//     navigate("/admin");
-//   };
-//   return (
-//     <div>
-//       {/* <h3>Heyy</h3> */}
-//       Dashboard Email : {dt.adminEmail}
-//       <br />
-//       Id : {dt.id}
-//       <br />
-//       FN : {dt.adminFN}
-//       <br />
-//       <button onClick={handleLogout}>Log me out from world</button>
-
-//     </div>
-//   );
-// }
-
-// export default Dashboard;
-
-// ----------------------------------------
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import {
@@ -93,14 +46,6 @@ export default function Dashboard() {
   };
   return (
     <>
-      {/*
-        This example requires updating your template:
-
-        ```
-        <html class="h-full bg-white">
-        <body class="h-full">
-        ```
-      */}
       <div>
         <Transition.Root show={sidebarOpen} as={Fragment}>
           <Dialog
